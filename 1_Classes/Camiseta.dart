@@ -4,10 +4,6 @@
 
 // Protegido (Protevted) - Não existe no Dart
 
-// Atributos - Variáveis dentro de uma classe
-// Comportamento
-// Funções dentro das classes são chamadas de metodos
-
 class Camiseta {
   // Atributos de Instância
   String? tamanho;
