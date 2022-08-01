@@ -252,6 +252,105 @@ Ex: abertura de conexão com o banco de dados, existe uma conexão aberta? Entã
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  inicializadores - Aula 3
+
+  ____
+
+<h2><p align="left">
+Nas variáveis privadas do tipo final, eu não posso fazer uma nova atribuição de valor ao chamar o this dentro do construtor, pois a variável já foi inicializada como null. Para resolver isso, posso colocar na frente do construtor ’:’ e fazer as associações necessárias, da seguinte forma: 
+
+````dart
+Produto({
+    required int id,
+    required this.nome,
+    required double preco,
+  })  : _id = id, _preco = preco
+}
+````
+
+<h4>
+
+````dart
+class Produto {
+  final int _id;
+  final String nome;
+  final double _preco;
+
+  // Produto(this.id, this.nome, this.preco);
+  Produto({
+    required int id,
+    required this.nome,
+    required double preco,
+  })  : _id = id,
+        _preco = preco {
+    print(_id);
+    print(_preco);
+  }
+  factory Produto.fabrica({
+    required int id,
+    required String nome,
+    required double preco,
+  }) {
+    return Produto(id: id, nome: nome, preco: preco);
+  }
+}
+````
+
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Null Safety - Aula 3.1
+
+  ____
+
+<h2><p align="left">
+
+**late** - me permite criar um atributo que será inicializado depois. Apesar dele me permitir a criação, possa ser que ele não funcione, pois, no momento da criação, ele sobrescreve todas as outras regras, camuflando em tempo de compilação alguma anomalia que exista;
+
+Em caso de variáveis finais com uso do late, posso fazer a atribuição de valor uma única vez;
+````dart
+late final String nome;
+````
+
+Tome muito cuidado com o late e o ! (force now null). Para resolver, pode ser feita a inicialização no momento da criação da variável, ou a checagem com o null Aware operator ou checagem de null com if/else:
+````dart
+// null Aware operator
+print(cliente.idade?.toLowerCase()??'');
+
+// CHECAGEM DE NULL
+if (cliente.idade != null) {
+print(cliente.idade!.toLowerCase());
+}
+````
+
+
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+
+
+
+
+
+
+
+
 
 
 [codigo]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-4.png?raw=true
