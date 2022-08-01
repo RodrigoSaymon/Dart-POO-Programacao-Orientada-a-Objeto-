@@ -1,25 +1,7 @@
-// class Pessoa {
-// String? nome;
-// int? idade;
-// String? sexo;
-
-// costrutor defult todas as classes tem automaticamente
-//Pessoa(
-// String nomeConstruct, int idadeConstruct, String sexoConstruct
-// ) {
-// nome = nomeConstruct;
-// idade = idadeConstruct;
-// sexo = sexoConstruct;
-
-
-
 class Pessoa {
   String? nome;
   int? idade;
   String? sexo;
-
-// todas as classes tem automaticamente
-  // Pessoa();
 
   Pessoa(String nomeConstrutor, int idadeConstrutor, String sexoConstrutor) {
     nome = nomeConstrutor;
@@ -28,23 +10,23 @@ class Pessoa {
   }
 
 // Construtor Default
-  Pessoa({
+  Pessoa.segubdo({
     required this.nome,
     required this.idade,
     required this.sexo,
   });
   // Construtores Nomeados
-  Pessoa({
-    required this.nome,
+  Pessoa.SemNome({
+    required this.sexo,
     required this.idade,
   });
+  Pessoa.vazia();
 
-  // Construtor do tipo factor
-  // temos uma regra de negocio para criação da nossa classe
-  factory Pessoa.factory(String nomeConstrutor) {
-    nome = nomeConstrutor + '_Fabrica';
+  // Construtor do tipo factory
+  factory Pessoa.fabrica(String nomeConstrutor) {
+    var nome = nomeConstrutor + '_Fabrica';
     var pessoa = Pessoa.vazia();
     pessoa.nome = nome;
-    return Pessoa;
+    return pessoa;
   }
 }

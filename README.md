@@ -177,7 +177,80 @@ class _Camiseta2 {
 
 
 ![][codigo] 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Construtores - Aula 2
 
+  ____
+
+<h2><p align="left">
+
+O Construtor possui as características semelhantes à de um método, senco formado pelo mesmo nome da classe e parênteses.
+
+**Construtor default** -  todas as classes possuem um construtor automático, mesmo que eu não construa, o Dart já fornece por padrão. É possível chama-lo:
+````dart
+Pessoa();
+````
+
+Posso também, criar um construtor, com as informações que desejo que sejam inicializadas. Dentro do corpo do construtor posso fazer a atribuição das variáveis criadas pela classe:
+````dart
+class Pessoa {
+String? nome;
+int? idade;
+String? sexo;
+
+Pessoa({required String nomeConstruct,required int idadeConstruct,required String sexoConstruct}){
+nome = nomeConstruct;
+idade = idadeConstruct;
+sexo = sexoConstruct;
+}
+````
+
+- **this** - se utilizado, consigo pegar os atributos diretor da propria classe e produzir os mesmos efeitos do exemplo anterior;
+````dart
+Pessoa({required this.nome,required this.idade,required this.sexo});
+````
+
+Na invocação da minha classe, preciso informar os parâmetros, conforme o já estudado nas aulas anteriores:
+
+- **Atributos obrigatórios**
+- **Atributos opcionais**
+- **Atributos nomeados**
+````dart
+var pessoa = Pessoa (nome: 'Rodrigo Saymon', idade:36, sexo: 'Masculino');
+````
+**Construtor nomeado** - posso criar outros construtores dentro da mesma classe apenas criando um novo nome:
+````dart
+Pessoa.semNome({
+  required this.nome,
+  required this.idade,
+});
+````
+
+**Construtor factory (fabrica)**-  temos uma regra de negócio para criação da nossa classe. Ela faz uma verificação pra saber se é necessário a criação; 
+
+````
+Ex: abertura de conexão com o banco de dados, existe uma conexão aberta? Então retorna ela, se não cria uma nova conexão;
+````
+````dart
+  factory Pessoa.fabrica(String nomeConstrutor) {
+    var nome = nomeConstrutor + '_Fabrica';
+    var pessoa = Pessoa.vazia();
+    pessoa.nome = nome;
+    return pessoa;
+  }
+  ````
+
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+
+
+![][codigo] 
 
 
 
