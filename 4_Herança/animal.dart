@@ -6,8 +6,7 @@ abstract class Animal {
   Animal({required this.idade, required this.nome});
 
   int recuperarIdade() {
-    return idade ?? 0;
+    return idade;
   }
-
   int calcularIdadHumana();
 }

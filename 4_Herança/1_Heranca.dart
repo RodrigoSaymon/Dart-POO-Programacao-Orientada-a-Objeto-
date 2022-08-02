@@ -1,10 +1,9 @@
-// Herança - Todas as alterações feitas no pai precisa
-// nessecita de implementações nos filhos
+
 
 import 'cachorro.dart';
 
 void main() {
-  var cachorro = Cachorro(idade: 10);
+  var cachorro = Cachorro(idade: 10, nome: 'Pandora');
   cachorro.tamanho = 'Pequeno';
 
   // cachorro.idade = 10;

@@ -343,12 +343,97 @@ print(cliente.idade!.toLowerCase());
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Herança - Aula 4
+
+  ____
+
+<h2><p align="left">
+
+Herança é herdar características e comportamentos de outra classe;
+````
+EX: Uma classe animal, e uma classe cachorro, o cachorro por ser um animal pode entender as Características e comportamentos do animal.
+````
+**abstract** - os  métodos das classes, podem ser criados sem implementação, essa responsabilidade fica para os herdeiros, no entanto, a classe pai precisa ser abstrata;
+
+**@override (meta data ou anotação)** -  na classe herdeiras, ao chamar um método, é preciso implementá-la com uma anotação, sinalizando que aquele método está sendo herdado.
+
+**: super** - o herdeiro, ao fazer a implementação de um método, no seu construtor, deve repassar as informações para a classe de onde foi herdado o método;
+````dart
+Cachorro({required int idade, required String nome}) : super(idade: idade, nome: nome);
+````
+Todas as atualizações feitas na classe pai precisam ser implementadas nos filhos.
+
+<h4>
+
+````dart
+import 'cachorro.dart';
+
+void main() {
+  var cachorro = Cachorro(idade: 10, nome: 'Pandora');
+  cachorro.tamanho = 'Pequeno';
+
+  // cachorro.idade = 10;
+  print(cachorro.calcularIdadHumana());
+  print(cachorro.recuperarIdade());
+
+  print('''
+Cachorro: 
+  Tamanho: ${cachorro.tamanho}
+  Idade: ${cachorro.idade}
+  Idade Humana: ${cachorro.calcularIdadHumana()}
+  ''');
+}
+
+abstract class Animal {
+  String? tamanho;
+  final int idade;
+  final String nome;
+
+  Animal({required this.idade, required this.nome});
+
+  int recuperarIdade() {
+    return idade;
+  }
+  int calcularIdadHumana();
+}
+
+import 'animal.dart';
+
+class Cachorro extends Animal {
+  Cachorro({required int idade, required String nome}) : super(idade: idade, nome: nome);
+
+  @override
+    int calcularIdadHumana() {
+    if (idade != null) {
+       return idade * 7;
+    }
+    return 0;
+  }
+}
+
+import 'animal.dart';
+
+class Gato extends Animal {
+  Gato({required int idade}) : super(idade: idade, nome: 'Gatinho');
+  @override
+  int calcularIdadHumana() {
+    return idade * 15;
+  }
+}
+````
 
 
 
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
 
+---
 
+![][codigo2] 
 
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
 
 
 
