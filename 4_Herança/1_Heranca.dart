@@ -1,5 +1,3 @@
-
-
 // Herança - Todas as alterações feitas no pai precisa
 // nessecita de implementações nos filhos
 
