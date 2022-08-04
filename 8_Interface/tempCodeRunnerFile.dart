@@ -1,0 +1,2 @@
+
+rodas: ${carro.rodas}
