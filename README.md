@@ -510,9 +510,51 @@ class Banana extends Fruta {
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Associação - Aula 5
 
+  ____
 
+<h2><p align="left">
 
+**Associação** - 'tem um' (endereço telefone) ele 'não é um', é uma relação de dependência. Se divide em:
+
+  - **Composição** - Quando um atributo de associação é obrigatório, não pode existir sem:
+  ````
+  CPF, Nome, Endereço
+  ````
+
+  - **Agregação** - Quando um atributo de associação não é obrigatório, pode existir sem:
+  ````
+Telefone
+````
+
+<h4>
+
+````dart
+class Pessoa {
+  String? nome;
+  Endereco endereco = Endereco();
+  CPF cpa = CPF();
+
+  Telefone? telefone;
+}
+
+class Endereco {}
+
+class CPF {}
+
+class Telefone {}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
 
 
 
