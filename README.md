@@ -435,6 +435,84 @@ class Gato extends Animal {
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Herança Covariant - Aula 4.1
+
+  ____
+
+<h2><p align="left">
+
+**Covariant** - permite implementar ações em uma classe, dês de que ela estenda a classe estou trabalhando, aceitando a sobre escrita de um tipo especifico da classe; 
+````
+EX: tenho uma classe fruta e uma classe mamíferos, que por sua vez, possui o método comer fruta. Tenho a classe macaco e humano que estendem mamífero e recebem o método comer fruta. Se quiser definir um tipo especifico de fruta, posso criar uma classe, como por exemplo banana e entender fruta. Dessa forma, com a palavra reservada covariant, todos os tipos relacionados a frutas que sejam sobre escrito em uma classe, podem ser acessados pelas classes que a estende.
+````
+
+
+<h4>
+
+````dart
+import 'banana.dart';
+import 'fruta.dart';
+import 'humano.dart';
+import 'macaco.dart';
+
+void main() {
+  var humano = Humano();
+  humano.comer(Fruta());
+
+  var macaco = Macaco();
+  macaco.comer(Banana('Nanica'));
+}
+
+class Fruta{}
+
+import 'fruta.dart';
+
+abstract class Mamifero {
+  void comer(covariant Fruta fruta);
+}
+
+import 'fruta.dart';
+import 'mamifero.dart';
+
+class Humano extends Mamifero {
+  @override
+  void comer(Fruta fruta) {}
+}
+
+import 'banana.dart';
+import 'mamifero.dart';
+
+class Macaco extends Mamifero {
+  @override
+  void comer(Banana fruta) {
+    print(fruta.tipo);
+  }
+}
+
+import 'fruta.dart';
+
+class Banana extends Fruta {
+ final String tipo;
+  Banana (this.tipo);
+}
+````
+
+
+
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+
+
+
 
 
 
