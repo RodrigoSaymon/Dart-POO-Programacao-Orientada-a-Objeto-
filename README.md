@@ -641,7 +641,129 @@ class Pediatra extends Medico {
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Interface - Aula 7
 
+  ____
+
+<h2><p align="left">
+
+**Interface** - forma de criar algum objeto ou classe. Estabelece os critérios básicos que minha classe precisa ter para ser considerada um objeto do tipo especifico;
+
+A principal diferença entre classe abstrata e interface é:
+
+- **Classe abstrata** - possui métodos implementados dentro dela:
+````dart
+abstract class CarroClasseAbstrata {
+void velocidadeMaxima(){
+}
+````
+- **Interface** - pode ter métodos, mais não implementado, essa responsabilidade fica para as classes filhas;
+````dart
+abstract class Carro {
+  int velocidadeMaxima();
+}
+````
+
+**abstract** - além das classes abstratas, posse ter meus atributos abstratos. Em uma interface, a responsabilidade de implementar os atributos fica para as classes filhas, mas, o null safety, não permita que eu não inicialize meus atributos. Para resolver isso, o Dart nos concede a possibilidade do abstract, obrigando a classe que for implementar, ter os atributos disponíveis.
+````dart
+abstract int porta;
+abstract int rodas;
+abstract String motor;
+````
+**implements** - ao invés de estender uma classe, vou implementar. Só terei acesso aos atributos que estão dentro da minha interface.
+
+
+<h4>
+
+````dart
+import 'carro.dart';
+import 'gol.dart';
+import 'uno.dart';
+
+void main() {
+  var uno = Uno();
+  var gol = Gol();
+  Carro golCarro = Gol();
+ 
+
+  // print(uno.velocidadeMaxima());
+  // print(gol.velocidadeMaxima());
+  printarDadosDoCarro(uno);
+  printarDadosDoCarro(gol);
+  print(gol.tipoDeRodas());
+}
+
+void printarDadosDoCarro(Carro carro) {
+  print('''
+carro:
+ tipo: ${carro.runtimeType}
+ portas: ${carro.porta}
+ rodas: ${carro.rodas}
+ motor: ${carro.motor}
+ velodidade Máxima: ${carro.velocidadeMaxima()}
+ ''');
+}
+abstract class CarroClasseAbstrata {
+void velocidadeMaxima(){
+}
+}
+
+abstract class Carro {
+  abstract int porta;
+  abstract int rodas;
+  abstract String motor;
+
+  int velocidadeMaxima();
+}
+import 'carro.dart';
+
+class Gol implements Carro {
+  @override
+  String motor = '2.0';
+
+  @override
+  int porta = 4;
+
+  @override
+  int rodas = 4;
+
+  @override
+  int velocidadeMaxima() {
+    return 200;
+  }
+
+  String tipoDeRodas() {
+    return 'esportivo';
+  }
+}
+import 'carro.dart';
+
+class Uno implements Carro {
+  @override
+  String motor = '1.0';
+
+  @override
+  int porta = 4;
+
+  @override
+  int rodas = 4;
+
+  @override
+  int velocidadeMaxima() {
+    return 160;
+  }
+}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
 
 
 
