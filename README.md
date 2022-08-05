@@ -556,6 +556,95 @@ class Telefone {}
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Polimorfismo - Aula 6
+
+  ____
+
+<h2><p align="left">
+
+**Polimorfismo** -  altera a característica de uma classe, estendendo uma classe pai e um comportamento genérico em todas as classes que quero envolver no processo, e, cada uma delas se preocupa com sus particularidades. Está totalmente ligado a herança;
+
+**super** -  faz a sobrescrita de métodos, permitindo que uma nova classe que estenda uma das classes filhas, passem a ter o mesmo comportamento da classe avô;
+
+
+<h4>
+
+````dart
+import 'medico.dart';
+import 'obstreta.dart';
+import 'pediatra.dart';
+import 'residente_anestesia.dart';
+
+void main() {
+  // parto!!!
+
+  var medicos = <Medico>[
+    // Anestesista(),
+    ResidenteAnestesia(),
+    Obstreta(),
+    Pediatra()
+  ];
+
+  // Realizar um parto
+  for (var medico in medicos) {
+    medico.operar();
+  }
+}
+abstract class Medico {
+  void operar();
+}
+import 'medico.dart';
+
+class Anestesista extends Medico {
+  @override
+  void operar() {
+    print('preparar e esterilzar os equipamentos');
+    print('anestesiar o paciente');
+  }
+}
+import 'anestesista.dart';
+
+class ResidenteAnestesia extends Anestesista {
+  @override
+  void operar() {
+    super.operar();
+
+    print('Limpar e desmontar os equipamentos');
+  }
+}
+import 'medico.dart';
+
+class Obstreta extends Medico {
+  @override
+  void operar() {
+    print('preparar o pacienten');
+    print('nascimento do bebe');
+  }
+}
+import 'medico.dart';
+
+class Pediatra extends Medico {
+  @override
+  void operar() {
+    print('examinar a criaça pós parto');
+  }
+}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+
+
+
+
 
 
 [codigo]: https://github.com/RodrigoSaymon/Dart-Fundamentos/blob/main/src/assets/Banner-4.png?raw=true
