@@ -923,6 +923,65 @@ mixin Dancar on Artista{
 
 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Mixin - Aula 9
+
+  ____
+
+<h2><p align="left">
+
+**Cascade Notation (..)** - uma forma simplificada de se chamar uma instancia. No primeiro, ponto ele me dar acesso a instancia anterior, e no segundo ponte tenho acesso aos atributos e métodos de instância.
+
+
+<h4>
+
+````dart
+void main() {
+  var pessoa = Pessoa()
+
+    ..nome = 'Rodrigo Saymon'
+    ..email = 'rodrigotbass@gmail.com'
+    ..site = 'academiadoflutter.com.br';
+
+  // pessoa.nome = 'Rodrigo Saymon';
+  // pessoa.email = 'rodrigotbass@gmail.com';
+  // pessoa.site = 'academiadoflutter.com.br';
+
+  var mapa = <String, String>{}
+    ..putIfAbsent('nome', () => 'Rodrigo')
+    ..putIfAbsent('email', () => 'null')
+    ..putIfAbsent('site', () => '');
+
+//   print('''
+// Nome: ${pessoa.nome}
+// Nome: ${pessoa.email}
+// Nome: ${pessoa.site}
+
+// ''');
+}
+class Pessoa {
+  String? nome;
+  String? email;
+  String? site;
+
+  void printPessoa() {
+    print('''
+Nome: ${'nome'}
+Nome: ${'email'}
+Nome: ${'site'}
+''');
+  }
+}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
 
 
 

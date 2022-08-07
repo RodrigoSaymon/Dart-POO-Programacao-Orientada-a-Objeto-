@@ -1,5 +1,7 @@
 void main() {
   var pessoa = Pessoa()
+  // Cascade Notation (..) - uma forma simplificada de se chamar uma instancia.
+  //no primeiro ponto ele me dar acesso a instancia anterior e no segundo ponte tenho acesso aos atributos e metodos de istancia
     ..nome = 'Rodrigo Saymon'
     ..email = 'rodrigotbass@gmail.com'
     ..site = 'academiadoflutter.com.br';
@@ -20,7 +22,6 @@ void main() {
 
 // ''');
 }
-
 class Pessoa {
   String? nome;
   String? email;
@@ -31,7 +32,6 @@ class Pessoa {
 Nome: ${'nome'}
 Nome: ${'email'}
 Nome: ${'site'}
-
 ''');
   }
 }
