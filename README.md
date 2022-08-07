@@ -923,7 +923,7 @@ mixin Dancar on Artista{
 
 
 
-<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Mixin - Aula 9
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Cascade Notation - Aula 10
 
   ____
 
