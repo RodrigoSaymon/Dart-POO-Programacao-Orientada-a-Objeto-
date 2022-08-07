@@ -1,6 +1,9 @@
-import 'package:dart_fundamentos/Curso_Rodrigo_Raman/M%C3%B3dulo_5_Dart_POO/10_mixins/joao.dart';
+import 'joao.dart';
 
 void main() {
+  //  joão é um Artista
+  //  joão é um Cantor
+  //  joão é um Dançar
   var joao = Joao();
   print(joao.habilidade());
   print(joao.cantar());

@@ -835,6 +835,93 @@ carro:
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Mixin - Aula 9
+
+  ____
+
+<h2><p align="left">
+
+Mixin  é uma classe como qualquer outra. Permite herança múltiplas. Pode ser utilizada de duas formas:
+
+Com a palavra reservada mixin:
+````dart
+mixin Dancar on Artista {}
+````
+classe abstrata normal que não pode entender ninguém:
+````dart
+abstract class Cantar {}
+````
+**on (somente se)** - estabelece uma condição para o mixin herdar de outra classe, sem ele, o mixin vai poder ser usado em qualquer lugar;
+````dart
+mixin Dancar on Artista {}
+````
+
+**with (com)** - as classes abstratas devem ser entendidas normalmente, já o mixin, utilizo palavra with para herdar suas propriedades. Dessa forma posso herdar tanto de mixins quanto de classes abstratas:
+````dart
+class Joao extends Artista with Dancar, Cantar {}
+````
+
+Se existir métodos entre as classes com o mesmo nome, ele vai sobrescrever os métodos anteriores.
+
+
+
+<h4>
+
+````dart
+import 'joao.dart';
+
+void main() {
+  //  joão é um Artista
+  //  joão é um Cantor
+  //  joão é um Dançar
+  var joao = Joao();
+  print(joao.habilidade());
+  print(joao.cantar());
+  print(joao.dancar());
+}
+import 'cantar.dart';
+import 'dancar.dart';
+import 'artista.dart';
+
+class Joao extends Artista with Dancar, Cantar {
+}
+
+abstract class Artista {
+  String habilidade() {
+    return 'Artista Geral';
+  }
+}
+abstract class Cantar {
+  String cantar() {
+    return 'Canta Rock';
+  }
+}
+import 'artista.dart';
+
+mixin Dancar on Artista{
+  String dancar() {
+    return 'Dança forró';
+  }
+
+  @override
+  String habilidade() {
+    return 'Dancar';
+  }
+}
+
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+
 
 
 
