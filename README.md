@@ -765,6 +765,78 @@ class Uno implements Carro {
 
 ![][codigo] 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Auto promoção de Tipo - Aula 8
+
+  ____
+
+<h2><p align="left">
+
+**Auto promoção** - feito uma checagem em uma variável null ela será promovida para não null.
+````dart
+  String? nome;
+  if (nome != null) {
+    nome.toLowerCase();
+  }
+  ````
+
+**Auto promoção de Tipo** - checagem de um tipo especifico para ter se acesso;
+  - **is** – checa se uma variável é *(is)* de um tipo especifico. Caso seja, o Dart vai automaticamente converter essa instancia para a classe do tipo. As variáveis de nível superior e atributos de classe não são auto promovidas.
+  ````dart
+  Carro golCarro = Gol();
+  ````
+Checagem com if/else:
+````dart
+  if (golCarro is Gol) {
+    golCarro.tipoDeRodas();
+  }
+  ````
+Checagem com ternário:
+````dart
+  print('tipo de roda: ${carro is Gol ? carro.tipoDeRodas() : 'Não disponível'}');
+  ````
+<h4>
+
+````dart
+import 'carro.dart';
+import 'gol.dart';
+import 'uno.dart';
+
+void main() {
+  Carro golCarro = Gol();
+  var uno = Uno();
+  var gol = Gol();
+
+  // print(uno.velocidadeMaxima());
+  // print(gol.velocidadeMaxima());
+  printarDadosDoCarro(uno);
+  printarDadosDoCarro(gol);
+  print(gol.tipoDeRodas());
+}
+void printarDadosDoCarro(Carro carro) {
+  print('''
+carro:
+ tipo: ${carro.runtimeType}
+ portas: ${carro.porta}
+ rodas: ${carro.rodas}
+ motor: ${carro.motor}
+ velodidade Máxima: ${carro.velocidadeMaxima()}
+ tipo de roda: ${carro is Gol ? carro.tipoDeRodas() : 'Não disponivel'}
+ ''');
+}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+
+
 
 
 
