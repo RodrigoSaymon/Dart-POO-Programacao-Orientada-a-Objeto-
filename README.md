@@ -1045,6 +1045,60 @@ class EnviarEmail {
 ![][codigo] 
 
 
+  <p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Operator Methods - Aula 12
+
+  ____
+
+<h2><p align="left">
+
+
+Operator Methods são funções ou métodos que utilizamos caracteres. No Dart esses caracteres de operação recebem o nome de operator methods.
+**+**  **-**  **==**  **<**  **>**  **>=**  **<=**  **!=**
+
+
+<h4>
+
+````dart
+import 'Numeros.dart';
+
+void main() {
+  var num1 = Numeros(10);
+  var num2 = Numeros(20);
+
+  num1 + num2;
+
+  var totalSoma = num1 + num2;
+  print(totalSoma.i);
+
+  var totalSub = num1 - num2;
+  print(totalSub.i);
+}
+class Numeros {
+  int i;
+  Numeros(this.i);
+
+  Numeros operator +(Numeros numero2) {
+    return Numeros((i + numero2.i) * 2);
+  }
+
+  Numeros operator -(Numeros numero2) {
+    return Numeros(i - numero2.i);
+  }
+}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+
+
 
 
 
