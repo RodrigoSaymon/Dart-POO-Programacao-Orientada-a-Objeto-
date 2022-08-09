@@ -984,6 +984,68 @@ Nome: ${'site'}
 ![][codigo] 
 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Callable Class - Aula 11
+
+  ____
+
+<h2><p align="left">
+
+Callable Class é uma forma de criar uma classe e fazer a invocação como se fosse uma função.
+
+**call** - escrita utilizada na criação do método:
+````dart
+    bool call(String email) {
+    return enviar(email);
+  }
+  ````
+Instancio a classe:
+````dart
+  var enviarEmail = EnviarEmail();
+  ````
+Chamando o método com Callable Class:
+````dart
+  enviarEmail('rodrigotbass@gmail.com');
+  ````
+Chamando o método de forma convencional:
+````dart
+  enviarEmail.enviar('rodrigotbass@gmail.com');
+   ````
+
+<h4>
+
+````dart
+import 'enviar_email.dart';
+
+void main() {
+   var enviarEmail = EnviarEmail();
+    enviarEmail('rodrigotbass@gmail.com');
+    enviarEmail.enviar('rodrigotbass@gmail.com');
+}
+class EnviarEmail {
+  bool call(String email) {
+    print('Chamando metodo Call');
+    return enviar(email);
+  }
+
+  bool enviar(String email) {
+    print('Chamando metodo enviar');
+    return true;
+  }
+}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
+
+
+
 
 
 
