@@ -1167,6 +1167,113 @@ void main() {
 
 
 
+<p align="left"><img width="25" height ="25" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg">  Referência de Memória - Aula 14
+
+  ____
+
+<h2><p align="left">
+
+**Referência de Memória** - compara se os valores das variáveis têm a mesma referência, ou seja, são iguais:
+````dart
+var p1 = Pessoa(nome: 'Rodrigo Saymon', email: 'rodrigotbass@gmail.com');
+var p2 = Pessoa(nome: 'Rodrigo Saymon', email: 'rodrigotbass@gmail.com');
+  ````
+No exemplo anterior, apesar dos valores serem iguais, elas não terão a mesma referência de memória, pois, implicitamente, cada instancia possui um número próprio de identidade. Para que tenham a mesma referência, é necessário igualar as variáveis. Dessa forma os dois irão apontar para a mesma referência.:
+````dart
+p2 = p1;
+````
+
+**Equals** - independente da referência de memória, posso definir quando a referência de memória vai ser igual:
+````dart
+    @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+  
+    return other is Pessoa &&
+      other.nome == nome &&
+      other.email == email;
+  }
+  ````
+É possível fazer a mesma implementação utilizando o plugin **Dart Data Class Generator**, clicando no nome da classe, na lampadinha e na opção **equality**.
+
+**Hashcode** - cálculo matemático utilizado para criptografar o uma variável ou arquivo. Toda vez que eu sobrescrever o Equals preciso sobrescrever o Hashcode, pois existem algumas coleções que utilizam os dois em conjunto. No Flutter existem gerenciadores de estado que os utilizam pra saber se o objeto foi alterado.
+````dart
+    @override
+  int get hashcode {
+    return nome.hashCode ^ email.hashCode;
+  }
+  ````
+É possível fazer a mesma implementação utilizando o plugin **Dart Data Class Generator**, clicando no nome da classe, na lampadinha e na opção **equality**.
+
+**toString** - descreve o tipo da classe  e seus atributos:
+````dart
+   @override
+  String toString() => 'Pessoa(nome: $nome, email: $email)';
+  ````
+É possível fazer a mesma implementação utilizando o plugin **Dart Data Class Generator**, clicando no nome da classe, na lampadinha e na opção **toString**.
+
+ 
+<h4>
+
+````dart
+import 'pessoa.dart';
+
+void main() {
+  var p1 = Pessoa(nome: 'Rodrigo Saymon', email: 'rodrigotbass@gmail.com');
+  var p2 = Pessoa(nome: 'Rodrigo Saymon', email: 'rodrigotbass@gmail.com');
+
+  print(p1.hashCode);
+  print(p2.hashCode);
+
+  print(p1);
+
+  if (p1 == p2) {
+    print('é igual');
+  } else {
+    print('não é igual');
+  }
+}
+
+/**
+ 1- p1 = pessoa();
+ 2- p2 = pessoa();
+ */
+
+ class Pessoa {
+  String nome;
+  String email;
+  Pessoa({
+    required this.nome,
+    required this.email,
+  });
+
+// Equals
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Pessoa && other.nome == nome && other.email == email;
+  }
+
+// hashCode
+  @override
+  int get hashCode => nome.hashCode ^ email.hashCode;
+
+// toString
+  @override
+  String toString() => 'Pessoa(nome: $nome, email: $email)';
+}
+````
+---
+<h4 align="center">Código desenvolvido no curso Academia do Flutter 2.0 ministrado por Rodrigo Rahman.
+
+---
+
+![][codigo2] 
+
+[<h2>Linkedin](https://www.linkedin.com/in/rodrigotbass/)
+
+![][codigo] 
 
 
 
